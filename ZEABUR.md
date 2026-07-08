@@ -4,17 +4,13 @@
 
 ## 服務 1：`glance`
 
-### Image
-`glanceapp/glance:latest`
+### Build
+- 從這個 repo folder build
+- Dockerfile：`glance/Dockerfile`
 
 ### Port
 - Port：`8080`
 - Type：`HTTP`
-
-### Volume
-- Mount path：`/app/config`
-- 內容：
-  - `glance.yml`
 
 ### Environment
 - `TZ=Asia/Taipei`

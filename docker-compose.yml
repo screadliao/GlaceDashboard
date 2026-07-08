@@ -13,13 +13,12 @@ services:
       - "8081:8081"
 
   glance:
-    image: glanceapp/glance:latest
+    build:
+      context: ./glance
     depends_on:
       - glance-feed
     environment:
       TZ: Asia/Taipei
       FEED_SERVICE_URL: http://glance-feed:8081
-    volumes:
-      - ./glance:/app/config:ro
     ports:
       - "8080:8080"

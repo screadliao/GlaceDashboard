@@ -12,8 +12,8 @@
 建議拆成兩個服務：
 
 1. `glance`
-   - 使用官方 `glanceapp/glance` image
-   - 設定檔掛載到 `/app/config`
+   - 用 repo 內的 `glance/Dockerfile` 自建 image
+   - `glance.yml` 會在 build 時 copy 進 `/app/config/glance.yml`
    - 對外 HTTP port `8080`
 
 2. `glance-feed`
@@ -82,7 +82,7 @@ Daily Brief HTML -> feed service -> Glance iframe
 1. 建立 `glance-feed` 服務。
 2. 取得它的 public URL。
 3. 把 `FEED_SERVICE_URL` 填回 `glance`。
-4. 建立 `glance` 服務。
+4. 建立 `glance` 服務，使用 `glance/Dockerfile` build。
 5. 確認 `iframe` widget 能讀到公開的 feed URL。
 
 ## 後續擴充
