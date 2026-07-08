@@ -1,0 +1,38 @@
+server:
+  host: 0.0.0.0
+  port: 8080
+  proxied: true
+
+pages:
+  - name: Home
+    columns:
+      - size: small
+        widgets:
+          - type: weather
+            location: Taipei, Taiwan
+            units: metric
+            hour-format: 12h
+          - type: markets
+            title: Watchlist
+            markets:
+              - symbol: TSM
+                name: TSMC
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: MSFT
+                name: Microsoft
+              - symbol: AMZN
+                name: Amazon
+
+      - size: full
+        widgets:
+          - type: iframe
+            title: Kanban
+            source: ${FEED_SERVICE_URL}/kanban
+            height: 680
+          - type: iframe
+            title: Daily Brief
+            source: ${FEED_SERVICE_URL}/daily-brief
+            height: 760
