@@ -6,6 +6,4 @@ COPY . /app/
 
 EXPOSE 8081
 
-WORKDIR /app/feed-service
-
 CMD ["python", "app.py"]

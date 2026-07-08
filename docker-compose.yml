@@ -1,15 +1,14 @@
 services:
   glance-feed:
     build:
-      context: .
-      dockerfile: feed-service/Dockerfile
+      context: ./feed-service
     environment:
       PORT: "8081"
       TZ: Asia/Taipei
       KANBAN_SOURCE_PATH: /app/data/KANBAN.md
       DAILY_BRIEF_HTML_PATH: /app/data/daily-brief.html
     volumes:
-      - .:/app
+      - ./data:/app/data
     ports:
       - "8081:8081"
 
